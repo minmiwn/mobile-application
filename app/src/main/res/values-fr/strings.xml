@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather APP</string>
+    <string name="mon">Lundi</string>
+    <string name="tue">"Mardi "</string>
+    <string name="wed">Mercredi</string>
+    <string name="thu">Jeudi</string>
+    <string name="fri">Vendredi</string>
+    <string name="sar">Samedi</string>
+    <string name="sun">Dimanche</string>
+</resources>
