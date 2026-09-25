@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".WeatherActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Fragment 1: WeatherFragment ở nửa trên -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/weather_container"
+        android:name="vn.edu.usth.weatherapp.WeatherFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_weather" />
+
+    <!-- Fragment 2: ForecastFragment ở nửa dưới -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/forecast_container"
+        android:name="vn.edu.usth.weatherapp.ForecastFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_forecast" />
+
+</LinearLayout>
