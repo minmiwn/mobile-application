@@ -36,6 +36,8 @@ android {
 }
 
 dependencies {
+    // Thư viện Material Components cho TabLayout
+    implementation("com.google.android.material:material:1.11.0")
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.activity.ktx)
