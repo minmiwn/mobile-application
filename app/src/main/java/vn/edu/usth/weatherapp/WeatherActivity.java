@@ -1,5 +1,6 @@
 package vn.edu.usth.weatherapp;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -8,10 +9,19 @@ import androidx.appcompat.app.AppCompatActivity;
 public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "WeatherActivity";
 
+    // 1. Khai báo biến MediaPlayer
+    private MediaPlayer mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+
+        // 2. Khởi tạo và phát nhạc từ file res/raw/farout.mp3
+        mp = MediaPlayer.create(this, R.raw.farout);
+        if (mp != null) {
+            mp.start();
+        }
 
         if (savedInstanceState == null) {
             // 1. Tạo và add WeatherFragment vào phần chứa ở trên
@@ -51,6 +61,13 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+        // 3. Giải phóng tài nguyên nhạc khi tắt ứng dụng
+        if (mp != null) {
+            mp.release();
+            mp = null;
+        }
+
         Log.i(TAG, "##### App Destroyed #####");
     }
 }
